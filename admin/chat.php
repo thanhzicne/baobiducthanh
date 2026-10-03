@@ -4,7 +4,7 @@ admin_require_login();
 admin_verify_csrf_or_die();
 require_once __DIR__ . '/../includes/customer.php';
 customer_ensure_tables($pdo);
-$adminPage = 'chat.php';
+$adminPage = 'conversations.php';
 $adminTitle = 'Chat trực tuyến';
 require __DIR__ . '/header.php';
 ?>

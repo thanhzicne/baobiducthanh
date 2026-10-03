@@ -10,7 +10,7 @@ $adminMenu = [
     ['group' => 'Đơn hàng', 'items' => [
         ['file' => 'quotes.php', 'label' => 'Yêu cầu báo giá', 'icon' => 'M9 7h6m-7 4h8m-9 4h10M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z', 'badge' => 'pending_quotes'],
         ['file' => 'contacts.php', 'label' => 'Liên hệ', 'icon' => 'M3 8l9 6 9-6M5 5h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2z', 'badge' => 'unread_contacts'],
-        ['file' => 'chat.php', 'label' => 'Chat trực tuyến', 'icon' => 'M4 6h16v12H4zM4 7l8 6 8-6', 'badge' => 'open_chats'],
+        ['file' => 'conversations.php', 'label' => 'Chat trực tuyến', 'icon' => 'M4 6h16v12H4zM4 7l8 6 8-6', 'badge' => 'open_chats'],
         ['file' => 'subscribers.php', 'label' => 'Nhắn tin', 'icon' => 'M4 6h16v12H4zM4 7l8 6 8-6', 'badge' => 'total_subscribers'],
     ]],
     ['group' => 'Danh mục', 'items' => [
