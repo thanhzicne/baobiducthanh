@@ -80,7 +80,7 @@ include __DIR__ . '/includes/breadcrumb.php';
 
         <?php if ($tooShort): ?>
             <div class="alert alert-warning">
-                ⚠️ Vui lòng nhập từ khóa tìm kiếm ít nhất <strong><?= $minLength ?> ký tự</strong> để kết quả chính xác hơn.
+                Vui lòng nhập từ khóa tìm kiếm ít nhất <strong><?= $minLength ?> ký tự</strong> để kết quả chính xác hơn.
             </div>
         <?php endif; ?>
 

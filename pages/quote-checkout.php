@@ -115,14 +115,14 @@ include __DIR__ . '/../includes/breadcrumb.php';
                     </div>
 
                     <div class="schedule-box" style="margin-bottom:20px;padding:20px;border:1.5px solid var(--c-border-light);border-radius:12px;background:#fafafa;">
-                        <h4 style="font-size:0.98rem;margin:0 0 14px;color:var(--c-primary);">📅 Loại yêu cầu và lịch hẹn</h4>
+                        <h4 style="font-size:0.98rem;margin:0 0 14px;color:var(--c-primary);">Loại yêu cầu và lịch hẹn</h4>
                         <div class="form-row">
                             <div class="form-group" style="margin-bottom:0;">
                                 <label class="form-label" for="qc_schedule_type">Loại lịch <span class="required">*</span></label>
                                 <select id="qc_schedule_type" name="schedule_type" class="form-control" required onchange="toggleScheduleDate(this.value)">
-                                    <option value="quote" <?= (($qf['schedule_type'] ?? 'quote') === 'quote') ? 'selected' : '' ?>>📋 Báo giá chỉ dẫn</option>
-                                    <option value="sample_view" <?= (($qf['schedule_type'] ?? '') === 'sample_view') ? 'selected' : '' ?>>👀 Hẹn xem mẫu tại xưởng</option>
-                                    <option value="delivery" <?= (($qf['schedule_type'] ?? '') === 'delivery') ? 'selected' : '' ?>>🚚 Hẹn giao hàng tận nơi</option>
+                                    <option value="quote" <?= (($qf['schedule_type'] ?? 'quote') === 'quote') ? 'selected' : '' ?>>Báo giá chỉ dẫn</option>
+                                    <option value="sample_view" <?= (($qf['schedule_type'] ?? '') === 'sample_view') ? 'selected' : '' ?>>Hẹn xem mẫu tại xưởng</option>
+                                    <option value="delivery" <?= (($qf['schedule_type'] ?? '') === 'delivery') ? 'selected' : '' ?>>Hẹn giao hàng tận nơi</option>
                                 </select>
                             </div>
                             <div class="form-group" style="margin-bottom:0;<?= in_array($qf['schedule_type'] ?? 'quote', ['sample_view', 'delivery']) ? '' : 'display:none;' ?>" id="qc_schedule_date_box">
@@ -155,7 +155,7 @@ include __DIR__ . '/../includes/breadcrumb.php';
                         <textarea name="note" id="qc_note" class="form-control" rows="4" placeholder="Ví dụ: Cần in logo, yêu cầu màu sắc, thời gian giao hàng, điều kiện thanh toán..." maxlength="2000"><?= e($qf['note'] ?? '') ?></textarea>
                     </div>
                     <div style="padding:14px 16px;background:rgba(232,163,61,0.12);border-radius:10px;margin-bottom:20px;font-size:0.86rem;line-height:1.6;color:#7c5a1d;border:1.5px solid rgba(232,163,61,0.30);">
-                        <strong style="color:#5b4315;">⚠️ Quy trình xử lý:</strong>
+                        <strong style="color:#5b4315;">Quy trình xử lý:</strong>
                         <ol style="margin:6px 0 0 18px;padding:0;">
                             <li>Bạn gửi yêu cầu và nhận mã số tự động</li>
                             <li>Chuyên gia báo giá liên hệ trong vòng <strong>60 phút</strong> làm việc</li>
@@ -195,7 +195,7 @@ include __DIR__ . '/../includes/breadcrumb.php';
                         <span class="summary-value" style="font-size:1.1rem;color:var(--c-accent);">Liên hệ</span>
                     </div>
                     <div style="margin-top:20px;padding:14px 16px;background:rgba(16,185,129,0.08);border-radius:10px;font-size:0.84rem;color:#065f46;line-height:1.6;">
-                        <strong>🎁 Ưu đãi đặc biệt B2B:</strong>
+                        <strong> Ưu đãi đặc biệt B2B:</strong>
                         <ul style="margin:6px 0 0 18px;padding:0;">
                             <li>Giảm 5-15% theo số lượng đơn hàng</li>
                             <li>Giao hàng miễn phí tại TP. HCM (đơn từ 2 triệu đồng)</li>
@@ -205,7 +205,7 @@ include __DIR__ . '/../includes/breadcrumb.php';
                     </div>
                     <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;">
                         <a href="<?= e(site_url('gio-bao-gia')) ?>" class="btn btn-outline" style="flex:1;min-width:150px;">← Sửa giỏ hàng</a>
-                        <a href="tel:0901234567" class="btn btn-primary" style="flex:1;min-width:150px;">📞 Hoặc gọi ngay</a>
+                        <a href="tel:0901234567" class="btn btn-primary" style="flex:1;min-width:150px;">Hoặc gọi ngay</a>
                     </div>
                 </div>
             </aside>
