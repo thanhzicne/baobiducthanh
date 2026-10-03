@@ -76,9 +76,6 @@ function handleAdd()
             flash_set('cart_status', 'Sản phẩm không tồn tại', 'error');
             redirect($_SERVER['HTTP_REFERER'] ?? site_url());
         }
-        $minOrder = max(1, (int)($p['min_order'] ?? 1));
-        if ($qty < $minOrder) $qty = $minOrder;
-
         $cart = cart_get_items();
         if (isset($cart[$pid])) {
             $cart[$pid]['quantity'] = (int)($cart[$pid]['quantity'] ?? 0) + $qty;
