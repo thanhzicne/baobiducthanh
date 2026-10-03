@@ -1,0 +1,4 @@
+Options -Indexes
+<Files ~ "\.(sql|bak|tmp|ini|env)$">
+    Require all denied
+</Files>

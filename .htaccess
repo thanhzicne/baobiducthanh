@@ -1,0 +1,69 @@
+﻿DirectoryIndex index.php
+
+RewriteEngine On
+
+RewriteRule ^\.htaccess$ - [F,L]
+RewriteRule ^\.env$ - [F,L]
+RewriteRule ^database\.sql$ - [F,L]
+RewriteRule ^logs(/|$) - [F,L]
+
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+RewriteRule ^gioi-thieu/?$ pages/about.php [L,QSA]
+RewriteRule ^san-pham/?$ pages/products.php [L,QSA]
+RewriteRule ^san-pham/([a-zA-Z0-9_-]+)/?$ pages/product-detail.php?slug=$1 [L,QSA]
+RewriteRule ^danh-muc/([a-zA-Z0-9_-]+)/?$ pages/products.php?slug=$1&category_slug=$1 [L,QSA]
+RewriteRule ^tin-tuc/?$ pages/news.php [L,QSA]
+RewriteRule ^tin-tuc/([a-zA-Z0-9_-]+)/?$ pages/news-detail.php?slug=$1 [L,QSA]
+RewriteRule ^lien-he/?$ pages/contact.php [L,QSA]
+RewriteRule ^dang-nhap/?$ pages/account.php?mode=login [L,QSA]
+RewriteRule ^dang-ky/?$ pages/account.php?mode=register [L,QSA]
+RewriteRule ^tai-khoan/?$ pages/account.php?mode=profile [L,QSA]
+RewriteRule ^quen-mat-khau/?$ pages/account.php?mode=forgot [L,QSA]
+RewriteRule ^dang-xuat/?$ pages/account.php?mode=logout [L,QSA]
+RewriteRule ^gio-bao-gia/?$ pages/quote-cart.php [L,QSA]
+RewriteRule ^thanh-toan/?$ pages/checkout.php [L,QSA]
+RewriteRule ^dat-hang-thanh-cong/?$ pages/order-success.php [L,QSA]
+RewriteRule ^lich-su-mua-hang/?$ pages/order-history.php [L,QSA]
+RewriteRule ^gio-bao-gia/checkout/?$ pages/quote-checkout.php [L,QSA]
+RewriteRule ^(?:cam-on-yeu-cau|gio-bao-gia/hoan-tat|yeu-cau-thanh-cong)/?$ pages/quote-success.php [L,QSA]
+RewriteRule ^search/?$ search.php [L,QSA]
+RewriteRule ^tim-kiem/?$ search.php [L,QSA]
+RewriteRule ^sitemap\.xml/?$ sitemap.php [L,QSA]
+RewriteRule ^page/([a-zA-Z0-9_-]+)/?$ pages/page.php?slug=$1 [L,QSA]
+RewriteRule ^404/?$ pages/404.php [L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ pages/404.php [L,QSA]
+
+<IfModule mod_mime.c>
+    AddType image/svg+xml svg
+    AddType application/manifest+json webmanifest
+    AddType application/font-woff woff
+    AddType application/font-woff2 woff2
+</IfModule>
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

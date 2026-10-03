@@ -1,0 +1,6 @@
+includes/config.php
+logs/
+uploads/
+database.sql
+*.zip
+.vscode/

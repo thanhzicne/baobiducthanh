@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /includes/
+Disallow: /logs/
+Disallow: /search?
+Disallow: /gio-bao-gia/
+Disallow: /gio-bao-gia/checkout/
+
+Allow: /uploads/*.jpg
+Allow: /uploads/*.jpeg
+Allow: /uploads/*.png
+Allow: /uploads/*.gif
+Allow: /uploads/*.webp
+Allow: /assets/
+
+Sitemap: SITE_URL_PLACEHOLDER/sitemap.xml

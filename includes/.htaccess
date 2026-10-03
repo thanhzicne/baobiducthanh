@@ -1,0 +1,17 @@
+Options -Indexes
+<Files ~ "\.(php|phtml|php3|php4|php5|php7|phar|pl|py|cgi|sh|jsp|asp|aspx)$">
+    Require all denied
+    Order allow,deny
+    Deny from all
+</Files>
+<Files ~ "\.(sql|bak|tmp|log|ini|conf|env|htaccess)$">
+    Require all denied
+    Order allow,deny
+    Deny from all
+</Files>
+<IfModule mod_php7.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php8.c>
+    php_flag engine off
+</IfModule>
