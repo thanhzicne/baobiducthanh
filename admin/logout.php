@@ -6,5 +6,6 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 admin_verify_csrf_or_die();
 admin_logout();
-flash_set('admin_msg', 'Bạn đã đăng xuất.', 'success');
-redirect(admin_url());
+unset($_SESSION['customer_id'], $_SESSION['customer_name'], $_SESSION['customer_username'], $_SESSION['customer_email'], $_SESSION['customer_last_active']);
+flash_set('customer_auth', 'Bạn đã đăng xuất.', 'success');
+redirect(site_url());

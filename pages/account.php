@@ -13,7 +13,7 @@ if ($requestedNext === 'gio-bao-gia/checkout' || $requestedNext === '__home__') 
 } elseif (preg_match('#^[a-zA-Z0-9][a-zA-Z0-9/_-]*$#', $requestedNext)) {
     $next = $requestedNext;
 }
-$customerRedirect = $next === '__home__' ? site_url() : site_url($next ?: 'gio-bao-gia/checkout');
+$customerRedirect = $next === '__home__' ? site_url() : site_url($next);
 
 $profile = null;
 if ($mode === 'profile') {

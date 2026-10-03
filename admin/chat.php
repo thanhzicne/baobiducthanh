@@ -168,7 +168,7 @@ require __DIR__ . '/header.php';
         }
     }
 </style>
-<div class="chat-layout" id="adminChat" data-endpoint="<?= e(site_url('api/chat.php')) ?>" data-csrf="<?= e(csrf_token()) ?>">
+<div class="chat-layout" id="adminChat" data-endpoint="<?= e(site_url('api/conversation.php')) ?>" data-csrf="<?= e(csrf_token()) ?>">
     <section class="chat-list">
         <h2>Hội thoại khách hàng</h2>
         <div class="chat-conversations" id="chatConversations" aria-live="polite">Đang tải...</div>

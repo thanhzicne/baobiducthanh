@@ -281,7 +281,7 @@ $chatLoginUrl = site_url('dang-nhap?next=' . rawurlencode($chatNext));
         }
     }
 </style>
-<aside class="site-chat" id="siteChat" data-endpoint="<?= e(site_url('api/chat.php')) ?>" data-csrf="<?= e(csrf_token()) ?>" data-authenticated="<?= !empty($_SESSION['customer_id']) ? '1' : '0' ?>" data-login-url="<?= e($chatLoginUrl) ?>">
+<aside class="site-chat" id="siteChat" data-endpoint="<?= e(site_url('api/conversation.php')) ?>" data-csrf="<?= e(csrf_token()) ?>" data-authenticated="<?= !empty($_SESSION['customer_id']) ? '1' : '0' ?>" data-login-url="<?= e($chatLoginUrl) ?>">
     <div class="site-chat-panel" id="siteChatPanel" hidden>
         <div class="site-chat-head"><span>Trò chuyện với đội ngũ</span><button type="button" class="site-chat-close" id="siteChatClose" aria-label="Đóng chat">×</button></div>
         <div class="site-chat-messages" id="siteChatMessages" aria-live="polite">

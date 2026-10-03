@@ -94,7 +94,7 @@
     (function() {
         var badge = document.querySelector('[data-admin-badge="open_chats"]');
         if (!badge) return;
-        var endpoint = <?= json_encode(site_url('api/chat.php?side=admin&action=unread_count')) ?>;
+        var endpoint = <?= json_encode(site_url('api/conversation.php?side=admin&action=unread_count')) ?>;
 
         function refreshUnreadBadge() {
             fetch(endpoint, {

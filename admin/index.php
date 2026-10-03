@@ -120,6 +120,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             font-size: 1.4rem;
             font-weight: 800;
             backdrop-filter: blur(4px);
+            overflow: hidden;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
         }
 
         .login-body {
