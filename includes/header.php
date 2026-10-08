@@ -63,7 +63,7 @@ $canonical = $pageCanonical ?? (isset($_SERVER['REQUEST_URI']) ? site_url(ltrim(
     <meta name="twitter:description" content="<?= e($metaDesc) ?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="<?= e(site_url('assets/css/style.css')) ?>">
+    <link rel="stylesheet" href="<?= e(site_url('assets/css/style.css?v=' . filemtime(BASE_PATH . '/assets/css/style.css'))) ?>">
     <?php if (!empty($jsonLd)): ?>
         <script type="application/ld+json">
             <?= display_brand_text(is_string($jsonLd) ? $jsonLd : json_encode($jsonLd, JSON_UNESCAPED_UNICODE)) ?>
@@ -77,13 +77,7 @@ $canonical = $pageCanonical ?? (isset($_SERVER['REQUEST_URI']) ? site_url(ltrim(
     <div class="topbar hidden-mobile">
         <div class="container">
             <div class="topbar-info">
-                <span title="Giờ làm việc">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <polyline points="12 6 12 12 16 14"></polyline>
-                    </svg>
-                    <?= e($settings['working_hours'] ?? 'Thứ 2 - Thứ 7: 08:00 - 18:00') ?>
-                </span>
+
                 <span>
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
@@ -115,10 +109,6 @@ $canonical = $pageCanonical ?? (isset($_SERVER['REQUEST_URI']) ? site_url(ltrim(
             <a class="logo" href="<?= e(site_url()) ?>" aria-label="<?= e($siteName) ?>">
                 <div class="logo-icon">
                     <img src="<?= e(site_url('assets/images/Logo.png')) ?>" alt="Bao bì Đức Thành">
-                </div>
-                <div class=" logo-text">
-                    <span class="logo-brand">Bao bì Đức Thành</span>
-                    <span class="logo-slogan"><?= e($settings['site_slogan'] ?? '') ?></span>
                 </div>
             </a>
             <nav class="main-nav" aria-label="Điều hướng chính">

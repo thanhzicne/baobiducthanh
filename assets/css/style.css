@@ -3321,11 +3321,15 @@ img.imgprev,
     position: fixed;
     right: 16px;
     bottom: calc(18px + env(safe-area-inset-bottom));
-    z-index: 90;
+    z-index: 200;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     gap: 12px;
+  }
+
+  .mobile-contact-popup {
+    z-index: 201;
   }
 
   .mobile-contact-toggle {
