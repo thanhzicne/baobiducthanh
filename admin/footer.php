@@ -118,6 +118,45 @@
         window.setInterval(refreshUnreadBadge, 3000);
     })();
 </script>
+<script>
+    (function() {
+        var sidebar = document.getElementById('adminSidebar');
+        var toggle = document.querySelector('.admin-menu-toggle');
+        var overlay = document.querySelector('.admin-side-overlay');
+        if (!sidebar || !toggle || !overlay) return;
+
+        function closeSidebar() {
+            sidebar.classList.remove('is-open');
+            overlay.classList.remove('is-visible');
+            overlay.hidden = true;
+            toggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+
+        toggle.addEventListener('click', function() {
+            if (sidebar.classList.contains('is-open')) {
+                closeSidebar();
+                return;
+            }
+            sidebar.classList.add('is-open');
+            overlay.hidden = false;
+            overlay.classList.add('is-visible');
+            toggle.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+        });
+
+        overlay.addEventListener('click', closeSidebar);
+        sidebar.querySelectorAll('a').forEach(function(link) {
+            link.addEventListener('click', closeSidebar);
+        });
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && sidebar.classList.contains('is-open')) closeSidebar();
+        });
+        window.matchMedia('(min-width: 861px)').addEventListener('change', function(event) {
+            if (event.matches) closeSidebar();
+        });
+    })();
+</script>
 </body>
 
 </html>

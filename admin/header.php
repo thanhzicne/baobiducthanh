@@ -166,6 +166,11 @@ $mustChangePwd = !empty($_SESSION['admin_must_change_password']);
             border-left: 3px solid transparent;
         }
 
+        .admin-side-overlay,
+        .admin-menu-toggle {
+            display: none;
+        }
+
         .side a.nav-i:hover {
             background: rgba(255, 255, 255, .08);
         }
@@ -609,6 +614,56 @@ $mustChangePwd = !empty($_SESSION['admin_must_change_password']);
             }
 
             .side {
+                display: flex;
+                width: min(280px, 85vw);
+                transform: translateX(-100%);
+                transition: transform .22s ease;
+            }
+
+            .side.is-open {
+                transform: translateX(0);
+            }
+
+            .admin-side-overlay.is-visible {
+                display: block;
+                position: fixed;
+                inset: 0;
+                z-index: 55;
+                border: 0;
+                background: rgba(17, 24, 39, .48);
+            }
+
+            .admin-menu-toggle {
+                display: inline-flex;
+                width: 40px;
+                height: 40px;
+                flex: 0 0 40px;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid var(--bd);
+                border-radius: 8px;
+                background: #fff;
+                color: var(--tx);
+                cursor: pointer;
+            }
+
+            .top {
+                justify-content: flex-start;
+                padding: 12px 16px;
+            }
+
+            .top-title {
+                flex: 1;
+                min-width: 0;
+            }
+
+            .top-title h1 {
+                overflow-wrap: anywhere;
+            }
+        }
+
+        @media(max-width:480px) {
+            .userm > div:last-child {
                 display: none;
             }
         }
@@ -767,7 +822,8 @@ $mustChangePwd = !empty($_SESSION['admin_must_change_password']);
 
 <body>
     <div class="adm">
-        <aside class="side">
+        <button type="button" class="admin-side-overlay" aria-label="Đóng menu" hidden></button>
+        <aside class="side" id="adminSidebar">
             <div class="side-brand">
                 <div class="logo-icon">
                     <img src="<?= e(site_url('assets/images/Logo.png')) ?>" alt="Bao bì Đức Thành">
@@ -816,7 +872,10 @@ $mustChangePwd = !empty($_SESSION['admin_must_change_password']);
 
         <div class="main">
             <header class="top">
-                <div>
+                <button type="button" class="admin-menu-toggle" aria-label="Mở menu quản trị" aria-controls="adminSidebar" aria-expanded="false">
+                    <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+                <div class="top-title">
                     <h1><?= e($adminTitle) ?></h1>
                     <?php if (!empty($adminSubtitle)): ?><div class="crumb"><?= $adminSubtitle ?></div><?php endif; ?>
                 </div>

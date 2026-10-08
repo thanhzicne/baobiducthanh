@@ -1,2 +1,2 @@
 <?php
-require __DIR__ . '/chat.php';
+require __DIR__ . '/messages.php';

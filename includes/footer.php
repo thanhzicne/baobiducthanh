@@ -109,55 +109,58 @@ $chatLoginUrl = site_url('dang-nhap?next=' . rawurlencode($chatNext));
     </a>
 </div>
 
-<div class="mobile-contact-bar" aria-hidden="false">
-    <div class="mobile-contact-bar-inner">
-        <a href="tel:<?= e($hotlineClean) ?>" aria-label="Goi">
-            <span class="mc-icon" style="background:#10b981">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+<div class="mobile-contact-widget">
+    <div class="mobile-contact-popup" id="mobileContactPopup" role="group" aria-label="Các cách liên hệ" hidden>
+        <a href="tel:<?= e($hotlineClean) ?>" class="mc-option">
+            <span class="mc-icon" style="background:#10b981"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                </svg>
-            </span>
-            <span class="mc-label">Gọi</span>
+                </svg></span>
+            <span>Gọi điện</span>
         </a>
-        <a href="sms:<?= e($hotlineClean) ?>" aria-label="SMS">
-            <span class="mc-icon" style="background:#3b82f6">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <a href="sms:<?= e($hotlineClean) ?>" class="mc-option">
+            <span class="mc-icon" style="background:#3b82f6"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                </svg>
-            </span>
-            <span class="mc-label">SMS</span>
+                </svg></span>
+            <span>SMS</span>
         </a>
-        <a href="<?= e($zalo) ?>" target="_blank" rel="noopener" aria-label="Zalo">
-            <span class="mc-icon" style="background:#0068ff">Z</span>
-            <span class="mc-label">Zalo</span>
+        <a href="<?= e($zalo) ?>" target="_blank" rel="noopener" class="mc-option">
+            <span class="mc-icon" style="background:#0068ff">Z</span><span>Zalo</span>
         </a>
-        <a href="<?= e($fbMsg) ?>" target="_blank" rel="noopener" aria-label="Messenger">
-            <span class="mc-icon" style="background:#0084ff">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2C6.36 2 2 6.16 2 11.4c0 2.64 1.28 5.02 3.28 6.64V22l3.02-1.74c.82.22 1.68.34 2.7.34 5.64 0 10-4.16 10-9.4S17.64 2 12 2z" />
-                </svg>
-            </span>
-            <span class="mc-label">Nhắn tin</span>
+        <a href="<?= e($fbMsg) ?>" target="_blank" rel="noopener" class="mc-option">
+            <span class="mc-icon" style="background:#0084ff"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.36 2 2 6.16 2 11.4c0 2.64 1.28 5.02 3.28 6.64V22l3.02-1.74c.82.22 1.68.34 2.7.34 5.64 0 10-4.16 10-9.4S17.64 2 12 2z"></path>
+                </svg></span>
+            <span>Nhắn tin</span>
         </a>
-        <button type="button" data-site-chat-open aria-label="Trò chuyện trực tuyến">
-            <span class="mc-icon" style="background:#176b59">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <button type="button" class="mc-option" data-site-chat-open>
+            <span class="mc-icon" style="background:#176b59"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8A8.5 8.5 0 0 1 8.7 3.9a8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8z"></path>
-                </svg>
-            </span>
-            <span class="mc-label">Chat</span>
+                </svg></span>
+            <span>Chat</span>
         </button>
-        <a href="<?= e(site_url('lien-he')) ?>" aria-label="Bản đồ">
-            <span class="mc-icon" style="background:var(--c-accent)">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <a href="<?= e(site_url('lien-he')) ?>" class="mc-option">
+            <span class="mc-icon" style="background:var(--c-accent)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                     <circle cx="12" cy="10" r="3"></circle>
-                </svg>
-            </span>
-            <span class="mc-label">Liên hệ</span>
+                </svg></span>
+            <span>Liên hệ</span>
         </a>
     </div>
+    <button type="button" class="mobile-contact-toggle" aria-label="Mở các cách liên hệ" aria-controls="mobileContactPopup" aria-expanded="false">
+        <svg class="mc-toggle-open" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8A8.5 8.5 0 0 1 8.7 3.9a8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8z"></path>
+        </svg>
+        <svg class="mc-toggle-close" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M18 6 6 18M6 6l12 12"></path>
+        </svg>
+        <span>Liên hệ</span>
+    </button>
 </div>
+<button type="button" class="back-to-top" aria-label="Lên đầu trang" title="Lên đầu trang">
+    <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="m18 15-6-6-6 6"></path>
+    </svg>
+</button>
 
 <style>
     .site-chat {

@@ -92,7 +92,16 @@ function customer_require_login()
 
 function customer_logout()
 {
-    unset($_SESSION['customer_id'], $_SESSION['customer_name'], $_SESSION['customer_username'], $_SESSION['customer_email'], $_SESSION['customer_last_active']);
+    unset(
+        $_SESSION['customer_id'],
+        $_SESSION['customer_name'],
+        $_SESSION['customer_username'],
+        $_SESSION['customer_email'],
+        $_SESSION['customer_last_active'],
+        $_SESSION['cart'],
+        $_SESSION['cart_backup'],
+        $_SESSION['order_form']
+    );
     session_regenerate_id(true);
 }
 

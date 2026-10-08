@@ -402,7 +402,47 @@
     }
 
     function initFloatingContact() {
-        if (window.matchMedia('(max-width: 768px)').matches) return;
+        var widget = document.querySelector('.mobile-contact-widget');
+        var toggle = document.querySelector('.mobile-contact-toggle');
+        var popup = document.querySelector('#mobileContactPopup');
+        var backToTop = document.querySelector('.back-to-top');
+
+        if (widget && toggle && popup) {
+            function closeContactPopup() {
+                popup.hidden = true;
+                toggle.setAttribute('aria-expanded', 'false');
+            }
+
+            toggle.addEventListener('click', function () {
+                var isOpen = toggle.getAttribute('aria-expanded') === 'true';
+                toggle.setAttribute('aria-expanded', String(!isOpen));
+                popup.hidden = isOpen;
+            });
+
+            popup.addEventListener('click', function (event) {
+                if (event.target.closest('.mc-option')) closeContactPopup();
+            });
+
+            document.addEventListener('click', function (event) {
+                if (!widget.contains(event.target)) closeContactPopup();
+            });
+
+            document.addEventListener('keydown', function (event) {
+                if (event.key === 'Escape') closeContactPopup();
+            });
+        }
+
+        if (backToTop) {
+            function updateBackToTop() {
+                backToTop.classList.toggle('is-visible', window.scrollY > 300);
+            }
+
+            window.addEventListener('scroll', updateBackToTop, { passive: true });
+            updateBackToTop();
+            backToTop.addEventListener('click', function () {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
     }
 
     function initAutoTOC() {
