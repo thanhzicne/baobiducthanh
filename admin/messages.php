@@ -176,7 +176,7 @@ require __DIR__ . '/header.php';
     <section class="chat-thread">
         <div class="chat-thread-head">
             <h2 id="chatCustomerTitle">Chọn một hội thoại</h2><span class="mini" id="chatCustomerEmail"></span>
-            <button type="button" class="chat-del-btn" id="chatDeleteBtn" hidden>🗑️ Xoá đoạn chat</button>
+            <button type="button" class="chat-del-btn" id="chatDeleteBtn" hidden> Xoá đoạn chat</button>
         </div>
         <div class="chat-thread-messages" id="chatThreadMessages" aria-live="polite"></div>
         <form class="chat-reply" id="chatReplyForm"><textarea name="message" maxlength="2000" required placeholder="Nhập nội dung trả lời..."></textarea><button class="btn" type="submit">Gửi trả lời</button></form>
