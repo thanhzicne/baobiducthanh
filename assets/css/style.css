@@ -538,6 +538,7 @@ textarea.form-control {
   display: flex;
   flex-direction: column;
   gap: 1px;
+  min-width: 0;
 }
 
 .logo-brand {
@@ -546,6 +547,7 @@ textarea.form-control {
   color: var(--c-primary);
   line-height: 1.15;
   letter-spacing: -0.2px;
+  white-space: nowrap;
 }
 
 .logo-slogan {
@@ -754,6 +756,12 @@ textarea.form-control {
 }
 
 /* Toàn cục: mọi ảnh hiển thị trong khung cố định luôn lấp đầy, không lộ nền */
+.banner-slide-image {
+  opacity: 0.55;
+}
+.banner-slide::before {
+  background-color: rgba(0, 0, 0, 0.18);
+}
 .testimonial-card img,
 .news-card img,
 .cat-card img {
@@ -3540,6 +3548,20 @@ img.imgprev,
 }
 
 @media (max-width: 1024px) {
+  .banner-slide {
+    min-height: 0;
+    height: auto;
+    padding: 48px 0;
+  }
+  .banner-slide::before {
+    background-color: rgba(15, 30, 25, 0.72);
+  }
+  .banner-content {
+    margin: 0 auto;
+    padding: 0 24px;
+    max-width: 100%;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+  }
   .site-header-inner {
     grid-template-columns: auto auto;
   }
@@ -3643,6 +3665,12 @@ img.imgprev,
   .section {
     padding: 44px 0;
   }
+  .banner-slide::before {
+    background-color: rgba(15, 30, 25, 0.55);
+  }
+  .banner-content {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+  }
   .topbar-info {
     gap: 14px;
     font-size: 0.8rem;
@@ -3725,9 +3753,16 @@ img.imgprev,
     right: 8px;
   }
   .banner-slide {
-    min-height: 380px;
+    min-height: 0;
+    height: auto;
     align-items: flex-start;
     padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  .banner-content {
+    margin: 0 auto;
+    padding: 0 16px;
+    max-width: 100%;
   }
   .news-detail-main {
     padding: 22px;
@@ -3745,26 +3780,49 @@ img.imgprev,
     display: block;
   }
   body {
-    padding-bottom: calc(60px + env(safe-area-inset-bottom));
+    padding-bottom: calc(96px + env(safe-area-inset-bottom));
   }
   .logo-brand {
-    font-size: 1.05rem;
+    font-size: 0.92rem;
   }
   .logo-slogan {
     display: none;
   }
   .logo-icon {
-    width: 44px;
-    height: 44px;
-    font-size: 1.1rem;
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
   }
   .site-header-inner {
-    padding: 12px 0;
-    gap: 10px;
+    display: flex;
+    padding: 8px 0;
+    gap: 8px;
+  }
+  .site-header-inner .logo {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+  .header-actions .btn-outline.btn-sm {
+    padding: 6px 10px;
+    min-height: 34px;
+    font-size: 0.78rem;
+    white-space: nowrap;
   }
   .cart-btn {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+  }
+  .menu-toggle {
     width: 40px;
     height: 40px;
+    flex-shrink: 0;
   }
   .quote-cart-table {
     display: block;
@@ -3779,6 +3837,10 @@ img.imgprev,
   }
   .header-actions {
     gap: 6px;
+  }
+  .header-actions .btn-outline.btn-sm {
+    padding: 5px 8px;
+    font-size: 0.72rem;
   }
 }
 
@@ -3804,7 +3866,9 @@ img.imgprev,
     grid-template-columns: 1fr;
   }
   .banner-slide {
-    min-height: 420px;
+    min-height: 0;
+    height: auto;
+    padding: 48px 0;
   }
   .banner-title {
     font-size: 1.55rem;
