@@ -663,7 +663,7 @@ $mustChangePwd = !empty($_SESSION['admin_must_change_password']);
         }
 
         @media(max-width:480px) {
-            .userm > div:last-child {
+            .userm>div:last-child {
                 display: none;
             }
         }
@@ -873,7 +873,9 @@ $mustChangePwd = !empty($_SESSION['admin_must_change_password']);
         <div class="main">
             <header class="top">
                 <button type="button" class="admin-menu-toggle" aria-label="Mở menu quản trị" aria-controls="adminSidebar" aria-expanded="false">
-                    <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                        <path d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
                 </button>
                 <div class="top-title">
                     <h1><?= e($adminTitle) ?></h1>

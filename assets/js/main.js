@@ -413,7 +413,8 @@
                 toggle.setAttribute('aria-expanded', 'false');
             }
 
-            toggle.addEventListener('click', function () {
+            toggle.addEventListener('click', function (event) {
+                event.stopPropagation();
                 var isOpen = toggle.getAttribute('aria-expanded') === 'true';
                 toggle.setAttribute('aria-expanded', String(!isOpen));
                 popup.hidden = isOpen;

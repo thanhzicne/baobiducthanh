@@ -28,7 +28,7 @@ include __DIR__ . '/../includes/breadcrumb.php';
     <div class="container" style="max-width:860px;">
         <?php if (!$success): ?>
             <div class="checkout-summary" style="text-align:center;">
-                <div style="font-size:3rem;">📦</div>
+
                 <h3>Không tìm thấy đơn hàng gần nhất</h3>
                 <p style="color:var(--c-text-muted);">Đơn hàng của bạn đã được xử lý hoặc bạn chưa đặt đơn nào.</p>
                 <?php if (customer_is_logged_in()): ?>

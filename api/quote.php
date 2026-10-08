@@ -325,7 +325,7 @@ function handleSubmit()
             'items' => $savedItems
         ];
 
-        flash_set('order_success', '🎉 Đặt hàng thành công! Mã đơn: <strong>' . e($code) . '</strong>. Chúng tôi sẽ liên hệ qua SĐT ' . e($shipping_phone) . ' trong vòng 60 phút!', 'success');
+        flash_set('order_success', 'Đặt hàng thành công! Mã đơn: <strong>' . e($code) . '</strong>', 'success');
         redirect(site_url('dat-hang-thanh-cong'));
     } catch (Exception $e) {
         error_log('Order submit error: ' . $e->getMessage());

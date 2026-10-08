@@ -164,7 +164,7 @@ include __DIR__ . '/../includes/breadcrumb.php';
                 else:
                 ?>
                     <div class="no-products">
-                        <div class="no-products-icon">📦</div>
+                        <div class="no-products-icon"></div>
                         <h3>Chưa có sản phẩm trong danh mục này</h3>
                         <p>Chúng tôi đang cập nhật sản phẩm. Vui lòng quay lại sau.</p>
                         <a href="<?= e(site_url('san-pham')) ?>" class="btn btn-primary mt-sm">Xem tất cả sản phẩm</a>

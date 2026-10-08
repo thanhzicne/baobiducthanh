@@ -65,7 +65,7 @@ $flash = flash_get('cart_status');
 
         <?php if (empty($cartItems)): ?>
             <div class="quote-cart-empty">
-                <div class="quote-cart-empty-icon">🛒</div>
+                <div class="quote-cart-empty-icon"></div>
                 <h3>Giỏ báo giá của bạn đang trống</h3>
                 <p>Hãy thêm sản phẩm cần báo giá vào giỏ để gửi yêu cầu.</p>
                 <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">

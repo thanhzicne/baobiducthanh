@@ -430,6 +430,15 @@ textarea.form-control {
   display: none;
 }
 
+@media (max-width: 768px) {
+  .hidden-mobile {
+    display: none !important;
+  }
+  .show-mobile {
+    display: inline-flex;
+  }
+}
+
 /* ============ TOPBAR ============ */
 .topbar {
   background: var(--c-primary);
@@ -560,8 +569,10 @@ textarea.form-control {
 .main-nav {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 2px;
+  flex: 0 0 auto;
+  width: max-content;
 }
 
 .main-nav a {
@@ -3567,7 +3578,9 @@ img.imgprev,
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
   }
   .site-header-inner {
-    grid-template-columns: auto auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
   .search-box {
     display: none;
@@ -3803,14 +3816,11 @@ img.imgprev,
     gap: 8px;
   }
   .site-header-inner .logo {
-    flex: 1 1 auto;
+    flex: 0 0 auto;
     min-width: 0;
   }
   .header-actions {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    flex-shrink: 0;
+    margin-left: auto;
   }
   .header-actions .btn-outline.btn-sm {
     padding: 6px 10px;

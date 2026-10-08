@@ -501,7 +501,7 @@ $chatLoginUrl = site_url('dang-nhap?next=' . rawurlencode($chatNext));
     </div>
 </footer>
 
-<script src="<?= e(site_url('assets/js/main.js')) ?>" defer></script>
+<script src="<?= e(site_url('assets/js/main.js?v=' . filemtime(BASE_PATH . '/assets/js/main.js'))) ?>" defer></script>
 </body>
 
 </html>

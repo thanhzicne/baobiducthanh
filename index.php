@@ -186,7 +186,7 @@ include __DIR__ . '/includes/header.php';
                     include __DIR__ . '/includes/product-card.php';
                 endforeach;
             else:
-                echo '<div class="no-products" style="grid-column:1/-1"><div class="no-products-icon">📦</div><h3>Chưa có sản phẩm</h3><p>Sản phẩm sẽ được cập nhật sớm nhất.</p></div>';
+                echo '<div class="no-products" style="grid-column:1/-1"><div class="no-products-icon"></div><h3>Chưa có sản phẩm</h3><p>Sản phẩm sẽ được cập nhật sớm nhất.</p></div>';
             endif;
             ?>
         </div>

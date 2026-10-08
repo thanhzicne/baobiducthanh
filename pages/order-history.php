@@ -59,7 +59,7 @@ include __DIR__ . '/../includes/breadcrumb.php';
 
         <?php if (empty($orders)): ?>
             <div class="quote-cart-summary" style="text-align:center;">
-                <div style="font-size:3rem;">🧾</div>
+                <div style="font-size:3rem;"></div>
                 <h3>Bạn chưa có đơn hàng nào</h3>
                 <p style="color:var(--c-text-muted);">Các đơn hàng sau khi đặt sẽ hiển thị tại đây.</p>
                 <a href="<?= e(site_url('san-pham')) ?>" class="btn btn-primary mt-md">Xem sản phẩm</a>
