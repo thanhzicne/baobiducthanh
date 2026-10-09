@@ -204,7 +204,7 @@ include __DIR__ . '/../includes/breadcrumb.php';
                         </ul>
                     </div>
                     <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;">
-                        <a href="<?= e(site_url('gio-bao-gia')) ?>" class="btn btn-outline" style="flex:1;min-width:150px;">← Sửa giỏ hàng</a>
+                        <a href="<?= e(site_url('gio-bao-gia')) ?>" class="btn btn-outline" style="flex:1;min-width:150px;">Sửa giỏ hàng</a>
                         <a href="tel:0901234567" class="btn btn-primary" style="flex:1;min-width:150px;">Hoặc gọi ngay</a>
                     </div>
                 </div>

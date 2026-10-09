@@ -138,7 +138,7 @@ $flash = flash_get('cart_status');
                     </div>
                     <div style="margin-top:18px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;">
                         <a href="<?= e(site_url('san-pham')) ?>" class="btn btn-outline btn-sm" style="min-height:44px;">
-                            ← Tiếp tục thêm sản phẩm
+                            Tiếp tục thêm sản phẩm
                         </a>
                         <form method="post" action="<?= e(site_url('api/quote.php?action=clear')) ?>" onsubmit="return confirm('Xóa tất cả sản phẩm khỏi giỏ?');">
                             <?= csrf_field() ?>

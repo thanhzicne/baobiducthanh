@@ -21,7 +21,7 @@ include __DIR__ . '/../includes/header.php';
             </form>
             <div class="error-actions">
                 <a href="<?= e(site_url()) ?>" class="btn btn-primary btn-lg">
-                    ← Quay lại trang chủ
+                    Quay lại trang chủ
                 </a>
                 <a href="<?= e(site_url('san-pham')) ?>" class="btn btn-outline btn-lg">
                     Xem sản phẩm

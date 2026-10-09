@@ -50,7 +50,7 @@ include __DIR__ . '/../includes/breadcrumb.php';
             <?= display_brand_text($page['content'] ?? '') ?>
         </div>
         <div class="text-center mt-md">
-            <a href="<?= e(site_url()) ?>" class="btn btn-outline btn-lg">← Quay về trang chủ</a>
+            <a href="<?= e(site_url()) ?>" class="btn btn-outline btn-lg">Quay về trang chủ</a>
         </div>
     </div>
 </section>

@@ -41,20 +41,6 @@ include __DIR__ . '/../includes/breadcrumb.php';
             <?php if ($flash): ?>
                 <div class="alert alert-<?= e($flash['type']) ?>"><?= $flash['message'] ?></div>
             <?php endif; ?>
-
-            <div class="checkout-summary" style="text-align:center;padding:32px 24px;">
-                <div style="width:88px;height:88px;margin:0 auto 18px;border-radius:50%;background:rgba(16,185,129,0.12);display:flex;align-items:center;justify-content:center;font-size:2.6rem;"></div>
-                <h2 style="margin-bottom:6px;">Đặt hàng thành công!</h2>
-                <p style="color:var(--c-text-muted);">Mã đơn hàng của bạn là:</p>
-                <div style="display:inline-block;margin:12px 0 22px;padding:12px 26px;border:2px dashed var(--c-accent);border-radius:12px;font-size:1.4rem;font-weight:800;letter-spacing:1px;color:var(--c-primary);background:rgba(232,163,61,0.08);">
-                    <?= e($success['code']) ?>
-                </div>
-                <p style="color:var(--c-text-muted);">
-                    Chúng tôi sẽ liên hệ qua số điện thoại <strong style="color:var(--c-text);"><?= e($success['shipping_phone']) ?></strong>
-                    trong vòng <strong style="color:var(--c-text);">60 phút làm việc</strong> để xác nhận đơn hàng.
-                </p>
-            </div>
-
             <div class="checkout-summary mt-md">
                 <h4>Chi tiết đơn hàng</h4>
                 <div class="summary-row">
